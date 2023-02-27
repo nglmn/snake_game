@@ -2,10 +2,13 @@ const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
 
 const bg = new Image();
-bg.src = 'img/bg.png';
+bg.src = './img/bg_1.png';
 
 const foodImg = new Image();
-foodImg.src = 'img/carrot.png'; // 32*32 px
+foodImg.src = 'img/carrot_green.png'; // 32*32 px
+
+const snakeImg = new Image();
+snakeImg.src = 'img/snake.png'
 
 let box = 32; //размер поля
 let score = 0; // очки начинаются с 0
@@ -46,7 +49,8 @@ function drawGame(){
 
     for(let i = 0; i < snake.length; i++){
         ctx.fillStyle = i == 0 ? 'green' : 'yellow' ;
-        ctx.fillRect(snake[i].x, snake[i].y, box, box);//прямоугольник с начальными координатами 
+        // ctx.fillRect(snake[i].x, snake[i].y, box, box);//прямоугольник с начальными координатами 
+        ctx.drawImage(snakeImg, snake[i].x, snake[i].y);
     }
     ctx.fillStyle ='white';
     ctx.font = '40px Roboto';

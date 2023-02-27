@@ -1,4 +1,10 @@
+body{
+    background-color: rgb(21, 21, 21);
+}
+
 canvas{
     display: block;
+    padding: 40px;
     margin: 0 auto;
+    
 }
